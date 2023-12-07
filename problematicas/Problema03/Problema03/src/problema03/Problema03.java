@@ -14,6 +14,12 @@ public class Problema03 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        double celsius;
+        for (int farenheit=20;farenheit<=80;farenheit+=4){
+            celsius = (double)(farenheit-32)*5/9;
+        System.out.printf("%d grados Farenheit son: %.2f grados Celsius\n",
+                farenheit,celsius );
+        }
         // TODO code application logic here
     }
     
