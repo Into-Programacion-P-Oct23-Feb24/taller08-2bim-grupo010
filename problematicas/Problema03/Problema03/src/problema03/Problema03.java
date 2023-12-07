@@ -15,11 +15,13 @@ public class Problema03 {
      */
     public static void main(String[] args) {
         double celsius;
+        String cadena = "";
         for (int farenheit = 20; farenheit <= 96; farenheit += 4) {
             celsius = (double) (farenheit - 32) * 5 / 9;
-            System.out.printf("%d grados Farenheit son: %.2f grados Celsius\n",
-                    farenheit, celsius);
+            cadena= String.format("%s%d grados Farenheit son: %.2f grados Celsius\n",
+                    cadena, farenheit, celsius);
         }
+        System.out.printf("%s", cadena);
         // TODO code application logic here
     }
 
