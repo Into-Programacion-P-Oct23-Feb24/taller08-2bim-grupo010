@@ -30,8 +30,8 @@ public class Problema01 {
         String listaB = "Listado de Edades ";
         double estatura;
         int hasta;
-        double promedio_edad;
-        double promedio_estatura;
+        double promedio_edad = 0;
+        double promedio_estatura = 0;
         int contador = 0;
         int suma_edad = 0;
         double suma_estatura = 0;
@@ -50,22 +50,30 @@ public class Problema01 {
             edad = entrada.nextInt();
             System.out.println("Ingrese la estatura del jugador");
             estatura = entrada.nextDouble();
+
+            lista = String.format("%s%d. %s - %s-, edad %d, estatura %.2f\n", lista,
+                    i, nombre, posicion, edad, estatura);
+
+            listaB = String.format("%s\n%d", listaB, edad);
             
-            entrada.nextLine();
+            // NO NECECITO EL NEXT DURANTE EL REGRESO DE DATOS
+            // entrada.nextLine();
             suma_edad = suma_edad + edad;
             suma_estatura = suma_estatura + estatura;
             contador = contador + 1;
 
-
-            lista = String.format("%s%d. %s - %s-, edad %d, estatura %.2f\n", lista,
-                    i, nombre, posicion, edad, estatura);
+            promedio_edad = (double) suma_edad / contador;
+            promedio_estatura = suma_estatura / contador;
             
-            listaB = String.format("%s\n%d",listaB,edad);
-        
         }
-      
+
         System.out.printf("%s", lista);
         System.out.printf("%s\n", listaB);
+        System.out.printf("Promedio de edades: %.1f\nPromedio de "
+                + "estaturas: %.2f\n",
+                promedio_edad,
+                promedio_estatura);
+
     }
 
 }
